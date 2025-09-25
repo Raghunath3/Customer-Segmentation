@@ -11,7 +11,7 @@ final_model = joblib.load("final_model.sav")
 
 # Load clustered data for visualization
 df = pd.read_csv("Clustered_Customer_Data.csv")
-st.pyplot(fig)
+
 st.title("Customer Segmentation App")
 st.markdown('<style>body{background-color: #f4f6f7;}</style>', unsafe_allow_html=True)
 
@@ -63,4 +63,5 @@ if submitted:
         sns.histplot(cluster_df[col], kde=True, bins=30, ax=ax)
         ax.set_title(f"Distribution of {col} (Cluster {cluster_label})")
         st.pyplot(fig)
+
 
